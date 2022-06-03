@@ -3,6 +3,14 @@ title: "DIDEV"
 theme: "PaperMod"
 languageCode: "en-us"
 
+params:
+  homeInfoParams:
+    Title: Hi there, welcome to my space.
+    Content: Here I post about my day to day discoveries in tech.
+  socialIcons:
+    - name: "Github"
+      url: "https://github.com/granddave"
+
 languages:
   en:
     languageName: "English"
