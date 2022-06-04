@@ -4,6 +4,19 @@ theme: "PaperMod"
 languageCode: "en-us"
 
 params:
+  author: David Isaksson
+  showToc: false
+  TocOpen: true
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+
+  editPost:
+    URL: "https://github.com/Granddave/site"
+    Text: "Found a typo?"
+    appendFilePath: true
+
   homeInfoParams:
     Title: Hi there, welcome to my space.
     Content: Here I post about my day to day discoveries in tech.
@@ -26,6 +39,9 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
+        #- name: Categories
+        #  url: categories/
+        #  weight: 5
 
 outputs:
   home:
