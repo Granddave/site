@@ -3,6 +3,7 @@ title: "DIDEV"
 theme: "PaperMod"
 languageCode: "en-us"
 
+# See params: https://github.com/adityatelange/hugo-PaperMod/wiki/Features
 params:
   author: David Isaksson
   showToc: false
@@ -11,6 +12,7 @@ params:
   ShowWordCount: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
+  SearchHidden: false
 
   editPost:
     URL: "https://github.com/Granddave/site"
@@ -43,9 +45,9 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
-        #- name: Categories
-        #  url: categories/
-        #  weight: 5
+        # - name: Categories
+        #   url: categories/
+        #   weight: 15
 
 outputs:
   home:
