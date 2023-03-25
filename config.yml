@@ -39,6 +39,9 @@ languages:
       tag: tags
     menu:
       main:
+        - name: About Me
+          url: about/
+          weight: 1
         - name: Search
           url: search/
           weight: 10
