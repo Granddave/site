@@ -1,0 +1,9 @@
+.dynamic-image img {
+  display: none;
+}
+body:not(.dark) .dynamic-image .light-mode-img {
+  display: block;
+}
+body.dark .dynamic-image .dark-mode-img {
+  display: block;
+}

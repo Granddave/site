@@ -1,0 +1,10 @@
+{{ $lightSrc := .Get "light"}}
+{{ $darkSrc := .Get "dark"}}
+{{ $alt := .Get "alt" }}
+{{ $class := .Get "class" }}
+{{ $style := .Get "style" }}
+
+<div class="dynamic-image {{ $class }}" style="{{ $style }}">
+  <img src="{{ $lightSrc }}" alt="{{ $alt }}" class="light-mode-img">
+  <img src="{{ $darkSrc }}" alt="{{ $alt }}" class="dark-mode-img">
+</div>
