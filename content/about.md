@@ -1,7 +1,7 @@
 ---
 Title: "About me"
 Type: about
-ThowToc: false
+ShowToc: false
 HideMeta: true
 ShowReadingTime: false
 ShowWordCount: false
