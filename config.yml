@@ -15,7 +15,7 @@ params:
   SearchHidden: false
 
   editPost:
-    URL: "https://github.com/Granddave/site"
+    URL: "https://github.com/Granddave/site/tree/main/content"
     Text: "Found a typo?"
     appendFilePath: true
 
