@@ -83,7 +83,7 @@ To make it easier to use, we can create a utility function.
 Here we also add support for authenticated `curl`.
 
 ```bash
-# ~/.zshenv or ~/.bashrc
+# ~/.zshrc or ~/.bashrc
 wget_jenkins() {
     wget --auth-no-challenge --user=$JENKINS_USERNAME --password=$JENKINS_TOKEN $@
 }
