@@ -2,6 +2,7 @@
 title: "Downloading Jenkins Artifacts via the CLI"
 date: 2023-04-02T18:28:29+02:00
 tags: ["Jenkins", "CLI", "wget","curl"]
+ShowCodeCopyButtons: true
 ---
 
 ## Problem
@@ -43,7 +44,7 @@ Now we can provide this information to `wget` and download our file.
 $ wget --auth-no-challenge --user=david --password=11a6b656cac594240285968eaa9347f491 https://...
 ```
 
-Now it works! But, it's not really recommended to pass API tokens on the command line since the secret can be easily
+It works! But, it's not really recommended to pass API tokens on the command line since the secret can be easily
 exposed that way, so let's put it in a file.
 
 ### Security and usability improvements
@@ -71,7 +72,7 @@ Put this in your `~/.zshenv` or `~/.bashrc` depending on what shell you use.
 source $HOME/.jenkins_token
 ```
 
-Now if we open up a fresh terminal we can access them like this:
+If we now open up a fresh terminal we can access the variables this:
 
 ```bash
 $ wget --auth-no-challenge --user=$JENKINS_USERNAME --password=$JENKINS_TOKEN
