@@ -13,6 +13,7 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   SearchHidden: false
+  ShowCodeCopyButtons: true
 
   editPost:
     URL: "https://github.com/Granddave/site/tree/main/content"
