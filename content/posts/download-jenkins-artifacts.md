@@ -118,3 +118,7 @@ artifacts and triggering Jenkins jobs remotely using the `wget` and `curl` tools
 ### Official documentation
 
 [Jenkins - Authenticating scripted clients](https://www.jenkins.io/doc/book/system-administration/authenticating-scripted-clients/)
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=35495903" >}}
