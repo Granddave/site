@@ -1,0 +1,10 @@
+{{ $url := .Get 0 }}
+<style>
+.no-box-shadow {
+  box-shadow: none !important;
+}
+</style>
+<a href="{{ $url }}" target="_blank" class="no-box-shadow" style="display: inline-flex; align-items: center; text-decoration: none; border-bottom: none;">
+  <img src="/img/hn.png" alt="Hacker News" style="height: 1em; margin-right: 5px; text-decoration: none;">
+  <span>Discuss on Hacker News</span>
+</a>
