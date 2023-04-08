@@ -1,5 +1,5 @@
 ---
-title: "Closing a Stale SSH Connection"
+title: "Closing a stale SSH connection"
 date: 2023-04-04T19:03:48+02:00
 tags: ["SSH", "CLI"]
 ShowCodeCopyButtons: true
@@ -14,7 +14,7 @@ multiple reasons for a stale session.
 The first solution that might come to mind is to just close the terminal
 emulator and create another one, but **there is a better way**.
 
-## SSH Escape Sequences
+## SSH escape sequences
 
 Before I show the trick we take a quick detour and explore a kind of hidden
 feature that is implemented in many of the available SSH clients.
@@ -49,7 +49,7 @@ Also, a small note for people using a keyboard with a **nordic layout**; To
 type the tilde character, press `AltGr+^ <Space>`. I know that this tripped me
 up when I first learned about escape sequences.
 
-### The "Terminate Session" Escape Sequence
+### The "terminate session" escape sequence
 
 So, back to the initial problem.
 

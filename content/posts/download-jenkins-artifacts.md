@@ -1,5 +1,5 @@
 ---
-title: "Downloading Jenkins Artifacts via the CLI"
+title: "Downloading Jenkins artifacts via the CLI"
 date: 2023-04-02T18:28:29+02:00
 tags: ["Jenkins", "CLI", "wget","curl"]
 ShowCodeCopyButtons: true
@@ -25,7 +25,7 @@ Jenkins required authentication...
 
 ## Solution
 
-### API Token
+### API token
 
 To authenticate ourselves we need to supply username and an *API token*.
 The token can be generated in the Web-UI:
@@ -102,7 +102,7 @@ $ wget_jenkins https://...
 $ curl_jenkins -o artifact.tar.gz https://...
 ```
 
-### Bonus: Trigger jobs
+### Bonus: trigger jobs
 
 In addition to downloading artifacts, you can also use the `curl_jenkins` function to trigger Jenkins jobs remotely:
 
