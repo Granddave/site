@@ -64,3 +64,7 @@ david@local:~$ echo $?
 ```
 
 From here we can try to initiate the connection again, or just reuse the terminal.
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=35504402" >}}
