@@ -64,3 +64,7 @@ While where at it, here are some other useful expansions.
 ## References
 
 See [bash(1) EXPANSION](https://www.man7.org/linux/man-pages/man1/bash.1.html#EXPANSION).
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=35512673" >}}
