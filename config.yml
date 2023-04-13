@@ -9,7 +9,7 @@ params:
   showToc: false
   TocOpen: true
   ShowReadingTime: true
-  ShowWordCount: true
+  ShowWordCount: false
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   SearchHidden: false
