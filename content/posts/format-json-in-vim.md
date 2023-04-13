@@ -94,3 +94,5 @@ vim.keymap.set("v", "<Leader>fcj", ":'<,'>!jq --compact-output<CR>", opts)
 - [jq](https://stedolan.github.io/jq/)
 
 ---
+
+{{< hackernews "https://news.ycombinator.com/item?id=35560775" >}}
