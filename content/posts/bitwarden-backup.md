@@ -241,3 +241,7 @@ We've covered how to set up:
   - exports Bitwarden data in a future-proof format
   - safely encrypts the data with PGP
   - completes the Todoist task automaticallt via its API
+
+---
+
+{{< hackernews "https://news.ycombinator.com/edit?id=38338220" >}}
