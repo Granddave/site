@@ -244,4 +244,4 @@ We've covered how to set up:
 
 ---
 
-{{< hackernews "https://news.ycombinator.com/edit?id=38338220" >}}
+{{< hackernews "https://news.ycombinator.com/item?id=38338220" >}}
