@@ -48,7 +48,10 @@ languages:
           weight: 10
         - name: Tags
           url: tags/
-          weight: 10
+          weight: 11
+        - name: Archive
+          url: archive/
+          weight: 15
         # - name: Categories
         #   url: categories/
         #   weight: 15
