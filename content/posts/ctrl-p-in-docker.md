@@ -47,3 +47,4 @@ Let's fix it globally by modifying `~/.docker/config.json`
     "detachKeys": "ctrl-q,ctrl-q"
 }
 ```
+{{< hackernews "https://news.ycombinator.com/item?id=41027399" >}}
