@@ -15,19 +15,9 @@ jobs:
         with:
           submodules: true
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
-      - name: cache
-        uses: actions/cache@v2
-        with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
+        run: make setup
       - name: Build website with Hugo
-        run: hugo --minify
+        run: make build
       - name: Deploy website with rsync
         uses: burnett01/rsync-deployments@5.2.1
         with:
