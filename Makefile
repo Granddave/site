@@ -8,7 +8,7 @@ serve: bin/hugo
 	bin/hugo server -b localhost:$(PORT)
 
 .PHONY: build
-hugo: bin/hugo
+build: bin/hugo
 	bin/hugo --minify
 
 setup: bin/hugo
