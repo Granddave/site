@@ -10,27 +10,30 @@ jobs:
     name: Build and deploy website
     runs-on: ubuntu-latest
     steps:
+      # Setup
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Setup Hugo
-        run: make setup
-      - name: Build website with Hugo
-        run: make build
-      - name: Deploy website with rsync
-        uses: burnett01/rsync-deployments@5.2.1
-        with:
-          switches: -avzr --quiet --delete
-          path: public/
-          remote_path: ${{ secrets.REMOTE_PATH }}
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_user: ${{ secrets.REMOTE_USER }}
-          remote_key: ${{ secrets.REMOTE_KEY }}
-      - name: Set file permissions
-        uses: appleboy/ssh-action@v0.1.8
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.REMOTE_KEY }}
-          script: "sudo chown -R ${{ secrets.REMOTE_USER }}:www-data ${{ secrets.REMOTE_PATH }}"
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.REMOTE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t rsa ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          cat >> ~/.ssh/config <<EOF
+          Host ${{ secrets.REMOTE_HOST }}
+            IdentityFile ~/.ssh/id_ed25519
+            User ${{ secrets.REMOTE_USER }}
+          EOF
+
+      # Build and deploy
+      - name: Build website
+        run: make
+      - name: Deploy website
+        run: make deploy
+        env:
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
