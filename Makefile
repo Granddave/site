@@ -1,28 +1,32 @@
 PORT=1313
 HUGO_VERSION=0.134.0
 HUGO_PLATFORM_ARCH=linux-amd64
+# Check latest release here: https://github.com/gohugoio/hugo/releases
 HUGO_URL=https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hugo_$(HUGO_VERSION)_$(HUGO_PLATFORM_ARCH).tar.gz
+
+BIN_DIR=bin
+HUGO=$(BIN_DIR)/hugo
 
 .PHONY: all
 all: build
 
 .PHONY: build
-build: bin/hugo
-	bin/hugo --minify
+build: $(HUGO)
+	$(HUGO) --minify
 
 .PHONY: serve
-serve: bin/hugo
-	bin/hugo server -b localhost:$(PORT)
+serve: $(HUGO)
+	$(HUGO) server -b localhost:$(PORT)
 
-setup: bin/hugo
+setup: $(HUGO)
 
-bin/hugo: bin/hugo.tar.gz
-	tar -xvf bin/hugo.tar.gz -C bin
-	touch bin/hugo
+$(HUGO): $(BIN_DIR)/hugo.tar.gz
+	tar -xvf $(BIN_DIR)/hugo.tar.gz -C $(BIN_DIR)
+	touch $(HUGO)
 
-bin/hugo.tar.gz:
-	mkdir -p bin
-	wget $(HUGO_URL) -O bin/hugo.tar.gz
+$(BIN_DIR)/hugo.tar.gz:
+	mkdir -p $(BIN_DIR)
+	wget $(HUGO_URL) -O $(BIN_DIR)/hugo.tar.gz
 
 .PHONY: deploy
 deploy: build
@@ -34,4 +38,4 @@ deploy: build
 
 .PHONY: clean
 clean:
-	rm -rf bin public
+	rm -rf $(BIN_DIR) public
