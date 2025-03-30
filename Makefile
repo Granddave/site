@@ -36,6 +36,10 @@ deploy: build
 	rsync -avz --delete public/ $(REMOTE_HOST):$(REMOTE_PATH)
 	ssh $(REMOTE_HOST) sudo chown -R $(REMOTE_USER):www-data $(REMOTE_PATH)
 
+.PHONY: update-gpg
+update-gpg:
+	gpg --armor --export 9D061C14296CE3DBBAF6C5CB7B9F71950D93191B > static/davidisaksson.asc
+
 .PHONY: clean
 clean:
 	rm -rf $(BIN_DIR) public
