@@ -1,5 +1,5 @@
 PORT=1313
-HUGO_VERSION=0.134.1
+HUGO_VERSION=0.146.6
 HUGO_PLATFORM_ARCH=linux-amd64
 # Check latest release here: https://github.com/gohugoio/hugo/releases
 HUGO_URL=https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hugo_$(HUGO_VERSION)_$(HUGO_PLATFORM_ARCH).tar.gz
