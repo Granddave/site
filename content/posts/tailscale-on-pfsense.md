@@ -6,7 +6,7 @@ showToc: true
 TocOpen: false
 ---
 
-![Tailscale + pfSense](/img/tailscale-pfsense-header.png)
+{{< dynamic-image light="/img/tailscale-pfsense-header-light.png" dark="/img/tailscale-pfsense-header-dark.png" alt="Tailscale + pfSense" >}}
 
 In this post we're going to explore how to set up **Tailscale** in **pfSense** to be able to both route all traffic through pfSense for secure browsing and how to route traffic to local subnets with split DNS to resolve local hostnames.
 
