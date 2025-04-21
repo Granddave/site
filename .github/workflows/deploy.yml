@@ -18,13 +18,13 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.REMOTE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.REMOTE_KEY }}" > ~/.ssh/id_ed25519-didev_deploy
+          chmod 600 ~/.ssh/id_ed25519-didev_deploy
           ssh-keyscan -t rsa ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
           cat >> ~/.ssh/config <<EOF
           Host ${{ secrets.REMOTE_HOST }}
-            IdentityFile ~/.ssh/id_ed25519
+            IdentityFile ~/.ssh/id_ed25519-didev_deploy
             User ${{ secrets.REMOTE_USER }}
           EOF
 
