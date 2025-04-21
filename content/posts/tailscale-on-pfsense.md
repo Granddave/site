@@ -83,7 +83,7 @@ To let other devices on our tailnet to route traffic as they were on the pfSense
 1. In the pfSense, navigate to *VPN > Tailscale > Settings > Routing*
 2. Check *Advertise Exit Node*
 3. Click *Save*
-4. In the Tailscale backend, click the three dots by the pfSense machine and click *Edit route settings...*
+4. In the Tailscale backend, click the three dots by pfSense and click *Edit route settings...*
 5. Check *Use as exit node*
 
 Now any other device on the tailnet can route their traffic through pfSense by selecting pfSense in their *Use exit node* menu.
@@ -98,7 +98,7 @@ Here we need to decide what subnet to route to, in this example my LAN is `192.1
 
 1. In pfSense, navigate to *VPN > Tailscale > Settings > Routing*
 2. Under *Advertised Routes*, add subnet (`192.168.0.0/24`) and press *Save*
-3. In the Tailscale backend, click the three dots on pfSense and click *Edit route settings...*
+3. In the Tailscale backend, click the three dots by pfSense and click *Edit route settings...*
 4. Under *Subnet routes*, check the newly added subnet
 
 You should now be able to access the LAN behind pfSense from any device on your tailnet.
@@ -109,10 +109,9 @@ You should now be able to access the LAN behind pfSense from any device on your 
 IP addresses aren't always fun to use, especially when pfSense has a nice DNS server with records for all local hosts via the DHCP reservations.
 To be able to access the hosts on the internal subnet behind pfSense via their hostname we need to tell Tailscale to use pfSense's DNS server.
 
-1. On the Tailscale backend, navigate to *DNS > Nameservers*
+1. On the Tailscale backend, navigate to [*DNS > Nameservers*](https://login.tailscale.com/admin/dns)
 2. Press *Add nameserver > Custom...*
-3. Under *Nameserver*
-    1. Enter the internal IP address of the pfSense box (or where the internal DNS server is hosted)
+    1. Under *Nameserver*, enter the internal IP address of the pfSense box (or where the internal DNS server is hosted)
     2. Enable Split DNS by checking *Restrict to domain*
     3. Enter the domain name suffix, e.g. `example.com` to be able access a host with `server.example.com` as hostname. This way only the internal records are resolved by pfSense.
 
