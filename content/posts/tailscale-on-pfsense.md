@@ -122,3 +122,7 @@ It should now be possible to resolve internal hostnames from a tailnet device ou
 ## Conclusion
 
 In this post we've set up a pfSense firewall to let external devices to both use it as an exit node for secure browsing, and also use it to access hosts on local subnets by their hostnames like they were on the same LAN.
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=43750790" >}}
