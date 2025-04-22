@@ -41,7 +41,7 @@ jobs:
       # Clean up
       - name: Clean up
         run: |
-          rm -rf ~/.ssh/id_ed25519
+          rm -rf ~/.ssh/id_ed25519-didev_deploy
           rm -rf ~/.ssh/known_hosts
           rm -rf ~/.ssh/config
           echo "Cleaned up SSH keys and config"
