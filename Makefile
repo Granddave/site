@@ -7,7 +7,7 @@ HUGO_URL=https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hug
 BIN_DIR=bin
 HUGO=$(BIN_DIR)/hugo
 
-SHELL := /bin/bash
+SHELL := /usr/bin/env bash
 .SHELLFLAGS := -e -o pipefail -c
 
 # Default target
