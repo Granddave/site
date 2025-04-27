@@ -220,3 +220,7 @@ Below are some further reading and resources that might be of use.
 - [Stack Overflow: extract debug symbol info from ELF binary](https://stackoverflow.com/questions/45659150/extract-debug-symbol-info-from-elf-binary)
 - [GDB documentation for separate debug files](https://sourceware.org/gdb/current/onlinedocs/gdb.html/Separate-Debug-Files.html)
 - [GDB documentation for `symbol-file` command](https://sourceware.org/gdb/current/onlinedocs/gdb.html/Files.html)
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=43811376" >}}
