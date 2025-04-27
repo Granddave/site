@@ -15,6 +15,9 @@ params:
   SearchHidden: false
   ShowCodeCopyButtons: true
 
+  images:
+    - img/cover.jpg
+
   editPost:
     URL: "https://github.com/Granddave/site/tree/main/content"
     Text: "Found a typo?"
@@ -23,6 +26,7 @@ params:
   homeInfoParams:
     Title: Hi there, welcome to my space.
     Content: Here I post about my day to day discoveries in tech.
+
   socialIcons:
     - name: "Github"
       url: "https://github.com/granddave"
