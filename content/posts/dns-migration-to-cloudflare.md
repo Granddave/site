@@ -1,7 +1,7 @@
 ---
 title: "Moving DNS hosting from Namecheap to Cloudflare"
 date: 2025-05-16T16:20:00+02:00
-tags: ["DNS", "DDNS", "Cloudflare", "Namecheap", "pfSense"]
+tags: ["DNS", "DDNS", "Cloudflare", "Namecheap", "pfSense", "Networking"]
 showToc: true
 TocOpen: false
 ---
