@@ -90,3 +90,7 @@ I then repeated the same steps for my other firewall.
 The migration was easier than I initially expected, which is always a pleasant surprise when doing these kinds of things. I also got the bonus of DDoS protection and caching.
 
 Next step is to tinker with wildcard TLS certificates from Let's Encrypt to use for firewalled applications. Hope to see you there!
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=44006059" >}}
