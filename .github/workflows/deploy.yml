@@ -17,6 +17,7 @@ jobs:
           submodules: true
       - name: Set up SSH
         run: |
+          set -x
           mkdir -p ~/.ssh/
           echo "${{ secrets.REMOTE_KEY }}" > ~/.ssh/id_ed25519-didev_deploy
           chmod 600 ~/.ssh/id_ed25519-didev_deploy
