@@ -129,6 +129,8 @@ new note and get to work.
 - `\d{4}-\d{2}-\d{2}`
 - `\d{4}-W\d{1,2}`
 
+Any other ideas on where to use similar templates?
+
 ---
 
-Any other ideas on where to use similar templates?
+{{< hackernews "https://news.ycombinator.com/item?id=44284831" >}}
