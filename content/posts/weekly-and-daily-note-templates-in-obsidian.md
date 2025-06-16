@@ -25,7 +25,7 @@ Here is an example of how a generated week note could look like
 
 This template includes a
 [command](https://silentvoid13.github.io/Templater/syntax.html#command-syntax)
-that includes JavaScript to build up the file that we want based on the name of
+that executes JavaScript to build up the file that we want based on the name of
 the file. It generates links to the previous and next week as properties, and
 links to all work days of the week as bullet points.
 
@@ -35,7 +35,9 @@ links to all work days of the week as bullet points.
 tags:
   - weekly
 <%*
-// Parse current note date from filename (assumes "YYYY-[W]WW")
+// Parse current note date from filename (assumes "gggg-[W]ww")
+// `gggg` is "Locale 4 digit week year".
+// See https://momentjs.com/docs/#/parsing/string-format/
 let fileTitle = tp.file.title;
 let parts = fileTitle.split('-W');
 if (parts.length < 2) {
@@ -43,11 +45,11 @@ if (parts.length < 2) {
 } else {
   let year = parseInt(parts[0]);
   let week = parseInt(parts[1]);
-  let startOfWeek = moment().year(year).isoWeek(week).startOf("isoWeek");
+  let startOfWeek = moment().weekYear(year).week(week).startOf("week");
 
   // Next and prev week
-  tR += "prev: \"[[" + moment(startOfWeek).subtract(7, "days").format("YYYY-[W]WW") + "]]\"\n";
-  tR += "next: \"[[" + moment(startOfWeek).add(7, "days").format("YYYY-[W]WW") + "]]\"\n";
+  tR += "prev: \"[[" + moment(startOfWeek).subtract(7, "days").format("gggg-[W]ww") + "]]\"\n";
+  tR += "next: \"[[" + moment(startOfWeek).add(7, "days").format("gggg-[W]ww") + "]]\"\n";
 
   // Close properties
   tR += "---\n"
@@ -89,7 +91,7 @@ let d = moment(tp.file.title, "YYYY-MM-DD");
 if (!d.isValid()){
     tR += "Invalid date format";
 } else {
-    tR += "week: \"[[" + d.format("YYYY-[W]WW") + "]]\"\n";
+    tR += "week: \"[[" + d.format("gggg-[W]ww") + "]]\"\n";
 
     let prev, next;
     if (d.isoWeekday() === 1) {
@@ -118,16 +120,23 @@ if (!d.isValid()){
 
 ## Insert templates automatically via filename
 
-By using the calendar plugin as shown in the images above, clicking a week or
-date will open that note, or create it if it doesn't already exist. It will be
-named following the specific format. Templater has a feature where it can insert
-a template based on the name of the file. This makes it very easy to create a
-new note and get to work.
+By using the [calendar
+plugin](https://github.com/liamcain/obsidian-calendar-plugin) as shown in the
+images above, clicking a week or date will open that note, or create it if it
+doesn't already exist. It will be named following the specific format. Templater
+has a feature where it can insert a template based on the name of the file. This
+makes it very easy to create a new note and get to work.
+
+
+To get this working you need to change two settings;
+
+- Enable "Show week number" in the settings for the week column to appear.
+- Enable "Trigger Templater on new file creation, and enable "File regex
+  templates". Now you can add regular expressions for the two templates.
+    - `\d{4}-\d{2}-\d{2}`
+    - `\d{4}-W\d{1,2}`
 
 ![Templater settings](/img/obs-template-auto.png)
-
-- `\d{4}-\d{2}-\d{2}`
-- `\d{4}-W\d{1,2}`
 
 Any other ideas on where to use similar templates?
 
