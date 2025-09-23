@@ -1,10 +1,23 @@
 ---
 title: "Moving DNS hosting from Namecheap to Cloudflare"
 date: 2025-05-16T16:20:00+02:00
-tags: ["DNS", "DDNS", "Cloudflare", "Namecheap", "pfSense", "Networking"]
+tags:
+  - DNS
+  - DDNS
+  - Cloudflare
+  - Namecheap
+  - pfSense
+  - Networking
 showToc: true
 TocOpen: false
 ---
+
+> *This is part 1 of a short series about setting up DNS hosting with Cloudflare
+> and using DNS-01 challenges to get TLS certificates from Let's Encrypt for
+> locally hosted web services in a homelab.*
+>
+> *See part 2:
+> [Setting up a local reverse proxy with Nginx Proxy Manager and Let's Encrypt](posts/reverse-proxy/)*
 
 I bought this domain via Namecheap a few years back. Namecheap's services has been working fine. Not a very expensive domain name and the DNS hosting was good. My requirements for DNS hosting are very simple -- I want to be able to add some extra records and keep them up to date via [Dynamic DNS (DDNS)](https://www.cloudflare.com/learning/dns/glossary/dynamic-dns/) if (when) my IP addresses change due to e.g. DHCP leases running out so the domain name always points to a valid IP address.
 
@@ -74,7 +87,7 @@ Here is the process for how to set up a DDNS client in pfSense.
     - Password: DDNS Token from previous step
     - Description: Something nice such as *Cloudflare - DDNS Home*
 3. To save, scroll down and click *Save & Force Update*
-4. If everything went well, you should now see a green check mark and an IP under "Cached IP"
+4. If everything went well, you should now see a green check mark and an IP under *Cached IP*
 5. As a last step, I disabled the old Namecheap clients. I could've just removed the old ones, but I might as well leave them for documentation sake.
 
 ![Dynamic DNS in pfSense](/img/dns-migration-ddns.png)
@@ -90,6 +103,8 @@ I then repeated the same steps for my other firewall.
 The migration was easier than I initially expected, which is always a pleasant surprise when doing these kinds of things. I also got the bonus of DDoS protection and caching.
 
 Next step is to tinker with wildcard TLS certificates from Let's Encrypt to use for firewalled applications. Hope to see you there!
+
+**Part 2: [Setting up a local reverse proxy with Nginx Proxy Manager and Let's Encrypt](posts/reverse-proxy/)**
 
 ---
 
