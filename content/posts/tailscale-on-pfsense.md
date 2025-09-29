@@ -43,7 +43,7 @@ Another major upside is that an official package exist for pfSense which enables
 
 #### Installing package
 
-Make sure that the `Tailscale` package in pfSense is installed. To do this, navigate to *System > Package Manager > Available Packages* and find the `Tailscale` package in the list.
+Make sure that the `Tailscale` package in pfSense is installed. To do this, navigate to *System -> Package Manager -> Available Packages* and find the `Tailscale` package in the list.
 
 After installation a new *Tailscale* item should appear under the *VPN* menu.
 
@@ -59,7 +59,7 @@ To add pfSense to our tailnet we need to create an authentication key.
 
 Now to back in pfSense...
 
-1. Navigate to *VPN > Tailscale > Authentication*
+1. Navigate to *VPN -> Tailscale -> Authentication*
 2. Paste the newly generated auth key in *Pre-authentication Key*
 3. Click *Save*
 4. Navigate to *Settings*
@@ -68,7 +68,7 @@ Now to back in pfSense...
 
 To grant pfSense access to our tailnet we need to approve the device. It's also a good idea to disable the key expiration for this device since the device is trusted and we don't want it to expire.
 
-1. Navigate to [*Tailscale backend > Machines*](https://login.tailscale.com/admin/machines)
+1. Navigate to [*Tailscale backend -> Machines*](https://login.tailscale.com/admin/machines)
 2. Click the three dots on the new device and click
     - *Approve*
     - *Disable key expiry*
@@ -80,7 +80,7 @@ pfSense is now a part of the tailnet!
 
 To let other devices on our tailnet to route traffic as they were on the pfSense's LAN, we need to advertise it as an exit node.
 
-1. In the pfSense, navigate to *VPN > Tailscale > Settings > Routing*
+1. In the pfSense, navigate to *VPN -> Tailscale -> Settings -> Routing*
 2. Check *Advertise Exit Node*
 3. Click *Save*
 4. In the Tailscale backend, click the three dots by pfSense and click *Edit route settings...*
@@ -96,7 +96,7 @@ What subnet routing practically does is that if tailnet node *A* sends traffic t
 
 Here we need to decide what subnet to route to, in this example my LAN is `192.168.0.0/24`.
 
-1. In pfSense, navigate to *VPN > Tailscale > Settings > Routing*
+1. In pfSense, navigate to *VPN -> Tailscale -> Settings -> Routing*
 2. Under *Advertised Routes*, add subnet (`192.168.0.0/24`) and press *Save*
 3. In the Tailscale backend, click the three dots by pfSense and click *Edit route settings...*
 4. Under *Subnet routes*, check the newly added subnet
@@ -109,8 +109,8 @@ You should now be able to access the LAN behind pfSense from any device on your 
 IP addresses aren't always fun to use, especially when pfSense has a nice DNS server with records for all local hosts via the DHCP reservations.
 To be able to access the hosts on the internal subnet behind pfSense via their hostname we need to tell Tailscale to use pfSense's DNS server.
 
-1. On the Tailscale backend, navigate to [*DNS > Nameservers*](https://login.tailscale.com/admin/dns)
-2. Press *Add nameserver > Custom...*
+1. On the Tailscale backend, navigate to [*DNS -> Nameservers*](https://login.tailscale.com/admin/dns)
+2. Press *Add nameserver -> Custom...*
     1. Under *Nameserver*, enter the internal IP address of the pfSense box (or where the internal DNS server is hosted)
     2. Enable Split DNS by checking *Restrict to domain*
     3. Enter the domain name suffix, e.g. `example.com` to be able access a host with `server.example.com` as hostname. This way only the internal records are resolved by pfSense.
