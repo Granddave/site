@@ -421,3 +421,7 @@ Just some final thoughts on security when using a reverse proxy:
 - Check *"Block Common Exploits"* in NPM proxy host settings
 
 OK, that's all for now. See you next time!
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=46022962" >}}
