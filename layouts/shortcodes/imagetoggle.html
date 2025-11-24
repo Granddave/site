@@ -1,0 +1,15 @@
+{{ $interval := .Get "interval" | default "1000" }}
+
+<center><img id="toggle-img-{{ .Get "id" }}" src="{{ .Get "img1" }}" alt="toggle"></center>
+
+<script>
+  (function(){
+    const images = ["{{ .Get "img1" }}", "{{ .Get "img2" }}"];
+    let index = 0;
+    const imgElem = document.getElementById("toggle-img-{{ .Get "id" }}");
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      imgElem.src = images[index];
+    }, {{ $interval }});
+  })();
+</script>
