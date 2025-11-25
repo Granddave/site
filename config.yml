@@ -47,6 +47,9 @@ languages:
         - name: About Me
           url: about/
           weight: 1
+        - name: Talks
+          url: talks/
+          weight: 1
         - name: Search
           url: search/
           weight: 10
