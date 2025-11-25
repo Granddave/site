@@ -12,7 +12,7 @@ params:
   ShowWordCount: false
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
-  SearchHidden: false
+  searchHidden: false
   ShowCodeCopyButtons: true
 
   images:

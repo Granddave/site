@@ -6,7 +6,7 @@ HideMeta: true
 ShowReadingTime: false
 ShowWordCount: false
 ShowBreadCrumbs: false
-SearchHidden: true
+searchHidden: true
 ---
 
 # About me
