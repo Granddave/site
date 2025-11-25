@@ -12,8 +12,8 @@ TocOpen: false
 
 {{<
     dynamic-image
-    light="/img/dynamic-image-hugo-light.svg"
-    dark="/img/dynamic-image-hugo-dark.svg"
+    light="/img/dynamic-images-hugo-light.svg"
+    dark="/img/dynamic-images-hugo-dark.svg"
     alt="Excalidraw'd Hugo logo"
 >}}
 
