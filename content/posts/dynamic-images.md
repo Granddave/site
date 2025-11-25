@@ -122,3 +122,7 @@ During export, make sure *Background* is unchecked, and then export the image
 as SVG. Export the image once again but now toggle the *Dark mode* option.
 
 {{< figure src="/img/dynamic-images-export.png" >}}
+
+---
+
+{{< hackernews "https://news.ycombinator.com/item?id=46048430" >}}
