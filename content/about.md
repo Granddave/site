@@ -17,4 +17,4 @@ I'm a software engineer, homelabber, Linux enthusiast and security advocate.
 
 If you want to reach out to me, message me somewhere. If you want to do it securely, you can get my [PGP public key here🔑](/davidisaksson.asc).
 
-Mail me at `david.av.isaksson` at `protonmail` dot `com`
+Email me at `david.av.isaksson` at `protonmail` dot `com`
