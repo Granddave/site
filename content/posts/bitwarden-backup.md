@@ -8,6 +8,8 @@ TocOpen: false
 
 ![DALL-E: An image designed to visually represent a secure and futuristic data vault, embodying the themes of advanced technology and data security. This image, featuring the Bitwarden logo, is styled with a high-tech aesthetic.](/img/bw-backup-header.png)
 
+> **Update (2026-04-07):** The Todoist API used in the post has been deprecated. It is now updated to use the newer `/api/v1` path. See https://developer.todoist.com/api/v1/ for more information.
+
 ## Introduction
 
 Your Bitwarden vault contains (hopefully) all of your passwords and other sensitive data, so it would be good to have a backup of it in case something goes wrong.
@@ -168,11 +170,11 @@ To complete a task via the API, we can use the `POST /tasks/:id/close` endpoint.
 
 ```bash
 TOKEN=d41d8cd98f00b204e9800998ecf8427e0135234
-BW_TASK="5926521452"
+BW_TASK="68GfxJvXGCMh6XPQ"
 curl -sS \
     -H "Authorization: Bearer ${TOKEN}" \
     -X POST \
-    https://api.todoist.com/rest/v2/tasks/$BW_TASK/close
+    https://api.todoist.com/api/v1/tasks/$BW_TASK/close
 ```
 
 
@@ -202,11 +204,11 @@ echo "Done ($BACKUP_FILEPATH)"
 
 # Close Todoist task
 TOKEN=$(cat ~/.config/todoist/apikey)
-BW_TASK="5926521452"
+BW_TASK="68GfxJvXGCMh6XPQ"
 curl -sS \
     -H "Authorization: Bearer ${TOKEN}" \
     -X POST \
-    https://api.todoist.com/rest/v2/tasks/$BW_TASK/close
+    https://api.todoist.com/api/v1/tasks/$BW_TASK/close
 echo "Marked Todoist task as completed"
 ```
 
