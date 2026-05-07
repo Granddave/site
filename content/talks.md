@@ -11,6 +11,8 @@ searchHidden: true
 ### *Nix: Bottom Up*
 > Knowit Tech Talk, Jönköping, March 2026
 
+{{< youtube z92hldB_cNc >}}
+
 ### *Från IDE till PDE (Personal Development Environment)*
 > Knowit Tech Talk, Jönköping, March 2025
 
